@@ -1,0 +1,247 @@
+/* --------------- */
+/* - Variables CSS - */
+/* --------------- */
+
+* {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --colorPrimario: #e71d34;
+    --colorSegundario: #ededed;
+    --colorPrimarioOscuro: #cc1c30;
+    --colorNegro: rgba(24, 24, 24, .7);
+}
+
+/* --------------- */
+/* - Body - */
+/* --------------- */
+
+body {
+    overflow-x: hidden;
+}
+
+/* --------------- */
+/* - HEADER - */
+/* --------------- */
+.index-header {
+    background: linear-gradient(rgb(231, 29, 52, .7), rgba(231, 29, 52, .7)), url(/img/bg-header.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* --------------- */
+/* - Logotipo and Navbar - */
+/* --------------- */
+.primary-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.primary-navbar .navbar-list {
+    margin: 25px 30px;
+}
+
+.primary-navbar .navbar-list .navbar-list-listItem {
+    display: inline-block;
+    list-style: none;
+    margin: 0 10px;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: var(--colorSegundario);
+
+    transform: translateX(500px);
+    transition: .5s ease all;
+}
+
+.primary-navbar .navbar-list .navbar-list-listItem a {
+    color: var(--colorSegundario);
+    text-decoration: none;
+    font-size: 15px;
+    font-family: fantasy;
+    letter-spacing: 3px;
+}
+
+.primary-navbar .navbar-list .navbar-list-listItem:hover {
+    text-decoration: underline;
+}
+
+.primary-navbar .navbar-list .navbar-list-listItem.animationMove {
+    transform: translateX(0px);
+}
+
+.primary-navbar .navbar-list .navbar-list-listItem:nth-child(2) {
+    transition-delay: 50ms;
+}
+
+.primary-navbar .navbar-list .navbar-list-listItem:nth-child(3) {
+    transition-delay: 100ms;
+}
+
+.primary-navbar .navbar-list .navbar-list-listItem:nth-child(4) {
+    transition-delay: 150ms;
+}
+
+.logotipo {
+    color: var(--colorSegundario);
+    margin: 15px;
+    font-size: 35px;
+    font-family: cursive;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logotipo span {
+    color: #e71d34;
+}
+
+/* --------------- */
+/* - Content text header - */
+/* --------------- */
+
+.contend-text-header {
+    margin: 100px 50px 40px 60px;
+}
+
+.contend-text-header .title-text-header {
+    color: var(--colorSegundario);
+    font-size: 50px;
+    font-family: cursive;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.contend-text-header .span-text-header {
+    font-family: sans-serif;
+    font-style: italic;
+    color: var(--colorSegundario);
+    line-height: 2;
+}
+
+/* --------------- */
+/* - Cards Body - */
+/* --------------- */
+
+.trabajos {
+    padding: 20px;
+}
+
+.title-trabajos {
+    text-align: center;
+    font-size: 45px;
+    font-family: cursive;
+    margin: 70px;
+}
+
+.trabajos .main-cards {
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr);
+    align-content: center;
+}
+
+.trabajos .main-cards .card {
+    background: var(--colorSegundario);
+    height: 460px;
+    width: 340px;
+    margin: 20px auto;
+    padding: 20px;
+    transition: 300ms;
+}
+
+.trabajos .main-cards .card:hover {
+    box-shadow: 0px 0px 4px 4px var(--colorNegro);
+}
+
+.trabajos .main-cards .card .card-body {
+    display: flex;
+    flex-direction: column;
+    font-family: cursive;
+    text-align: center;
+}
+
+.trabajos .main-cards .card .card-body .title-card-body {
+    text-align: center;
+}
+
+.trabajos .main-cards .card .card-body .btn-card-body {
+    width: 50%;
+    margin: 20px auto;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background: var(--colorPrimario);
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 300ms ease all;
+}
+
+.trabajos .main-cards .card .card-body .btn-card-body:hover {
+    box-shadow: 0px 0px 3px 3px rgba(231, 29, 52, .7) ;
+    background: var(--colorPrimarioOscuro);
+}
+
+.trabajos .main-cards .card .card-body .img-card-body {
+    width: 50%;
+    margin: 20px auto;
+}
+
+/* --------------- */
+/* - Carousel Body - */
+/* --------------- */
+
+.main-galery .title-main-galery {
+    font-size: 45px;
+    font-family: cursive;
+    text-align: center;
+    margin: 70px;
+}
+
+.carousel__contenedor {
+    position: relative;
+    width: 90%;
+    margin: auto;
+}
+
+.carousel__anterior,
+.carousel__siguiente {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: none;
+    top: calc(50% - 35px);
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    background: var(--colorPrimario);
+    font-size: 30px;
+    color: var(--colorSegundario);
+    clip-path: circle();
+    transition: .4s ease all;
+}
+
+.carousel__anterior:hover,
+.carousel__siguiente:hover {
+    background: var(--colorPrimarioOscuro);
+}
+
+.carousel__anterior {
+    left: -40px;
+}
+
+.carousel__siguiente {
+    right: -40px;
+}
+
+.carousel__lista {
+    overflow: hidden;
+}
